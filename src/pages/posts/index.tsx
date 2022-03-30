@@ -60,9 +60,8 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       slug: post.uid, // é a url do post
       title: RichText.asText(post.data.title),
-      excerpt:
-        post.data.content.find(content => content.type == "paragraph")
-          ?.text ?? "", // para pegar apenas o paragrafo das publicações, dai se houver um texto vai achar um parágrafo. caso contrário, vai retonar a uma string vazia.
+      excerpt: post.data.content.find((content: any) =>
+      content.type === 'paragraph')?.text ?? '', // para pegar apenas o paragrafo das publicações, dai se houver um texto vai achar um parágrafo. caso contrário, vai retonar a uma string vazia.
       updatedAt: new Date(post.last_publication_date).toLocaleDateString(
         "pt-BR",
         {
