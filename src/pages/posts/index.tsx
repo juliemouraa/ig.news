@@ -48,10 +48,10 @@ export const getStaticProps: GetStaticProps = async () => {
   // pois queremos buscar dados do prismic
   const response = await prismic.query<any>(
     [
-      Prismic.predicates.at("document.type", "post"), // vou pegar os arquivos onde
+      Prismic.predicates.at("document.type", "publication"), // vou pegar os arquivos onde
     ],
     {
-      fetch: ["post.title", "post.content"],
+      fetch: ["publication.title", "publication.content"],
       pageSize: 100, // quantos posts vai retornar a listagem
     }
   );
@@ -72,6 +72,7 @@ export const getStaticProps: GetStaticProps = async () => {
       ),
     };
   });
+
 
   return {
     props: {

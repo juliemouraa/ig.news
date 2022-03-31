@@ -1,0 +1,9 @@
+{
+	"_latest": "0.3.3",
+	"apiEndpoint": "https://xignews.prismic.io/api/v2",
+	"libraries": [
+		"@/slices",
+		{ "libraries": ["@/slices"] }
+
+	]
+}
